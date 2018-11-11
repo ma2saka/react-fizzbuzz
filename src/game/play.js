@@ -76,7 +76,7 @@ export default class Play extends React.Component {
 
   render() {
     const fontSize = (300 + (10 - this.state.tick) * 100) + '%'
-    const buttonStyle = { fontSize: "4em", lineHeight: "30vh", height: "30vh", width: "40vw", textAlign: 'center' }
+    const buttonStyle = { fontSize: "3em", lineHeight: "30vh", height: "30vh", width: "43vw", textAlign: 'center' }
     return <>
       <div style={{ alignItems: 'center', padding: "0", margin: "0", display: 'flex', justifyContent: 'space-around', height: "50vh", fontSize }}>
         <div>
