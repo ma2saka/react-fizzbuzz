@@ -32,7 +32,7 @@ export default class Play extends React.Component {
       this.setState({ tick: tick })
     }
 
-    setTimeout(this.loop, this.props.interval / 10)
+    setTimeout(this.loop, this.props.options.interval / 10)
   }
 
   end(message) {
@@ -67,7 +67,7 @@ export default class Play extends React.Component {
 
   componentDidMount() {
     document.body.addEventListener("keydown", this.keydown)
-    setTimeout(this.loop, this.props.interval / 10)
+    setTimeout(this.loop, this.props.options.interval / 10)
   }
 
   componentWillUnmount() {
@@ -76,7 +76,7 @@ export default class Play extends React.Component {
 
   render() {
     const fontSize = (300 + (10 - this.state.tick) * 100) + '%'
-    const buttonStyle = { fontSize: "4em", lineHeight: "30vh", height: "30vh", width: "40vw", textAlign: 'center', border: '1px solid #000' }
+    const buttonStyle = { borderRadius: "10px", fontSize: "4em", lineHeight: "30vh", height: "30vh", width: "40vw", textAlign: 'center', border: '1px solid #000' }
     return <>
       <div style={{ alignItems: 'center', padding: "0", margin: "0", display: 'flex', justifyContent: 'space-around', height: "50vh", fontSize }}>
         <div>
