@@ -76,7 +76,7 @@ export default class Play extends React.Component {
 
   render() {
     const fontSize = (300 + (10 - this.state.tick) * 100) + '%'
-    const buttonStyle = { borderRadius: "10px", fontSize: "4em", lineHeight: "30vh", height: "30vh", width: "40vw", textAlign: 'center', border: '1px solid #000' }
+    const buttonStyle = { fontSize: "4em", lineHeight: "30vh", height: "30vh", width: "40vw", textAlign: 'center' }
     return <>
       <div style={{ alignItems: 'center', padding: "0", margin: "0", display: 'flex', justifyContent: 'space-around', height: "50vh", fontSize }}>
         <div>
@@ -84,8 +84,8 @@ export default class Play extends React.Component {
         </div>
       </div>
       <div style={{ display: "flex", padding: "0", margin: "0", justifyContent: 'space-around' }}>
-        <div style={{ ...buttonStyle, color: this.state.fizz ? '#F00' : '#000' }} onClick={this.fizz}> Fizz</div>
-        <div style={{ ...buttonStyle, color: this.state.buzz ? '#F00' : '#000' }} onClick={this.buzz}>Buzz</div>
+        <button style={{ ...buttonStyle, color: this.state.fizz ? '#F00' : '#000' }} onClick={this.fizz}> Fizz</button>
+        <button style={{ ...buttonStyle, color: this.state.buzz ? '#F00' : '#000' }} onClick={this.buzz}>Buzz</button>
       </div>
     </>
   }
