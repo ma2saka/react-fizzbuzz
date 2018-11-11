@@ -1,9 +1,13 @@
 import React from 'react'
-
+import { GoMarkGithub } from "react-icons/go";
 export default class Title extends React.Component {
   render() {
     const result = this.props.result;
     return (<div style={{ padding: "10px", textAlign: "center" }}>
+      <header style={{ fontSize: "2em" }}>
+        <a href="https://github.com/ma2saka/react-fizzbuzz"><GoMarkGithub /></a>
+      </header>
+      <hr />
       <p>previous score: {result ? (<>{result.score} ({result.message})</>) : "-"}</p>
       <h1>React FizzBuzz</h1>
       <p>Use "f" and "b" key.</p>
