@@ -13,7 +13,7 @@ export default class Title extends React.Component {
     const result = this.props.result;
     return (<>
       <p>previous score: {result ? (<>{result.score} ({result.message})</>) : "-"}</p>
-      <h1>Awesome FizzBuzz</h1>
+      <h1>React FizzBuzz</h1>
       <p>Use "f" and "b" key.</p>
       <button ref={this.startButtonRef} onClick={this.props.onStart}>
         START

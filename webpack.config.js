@@ -17,12 +17,8 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: [/node_modules/],
         loader: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        exclude: [/node_modules/],
-        use: ["style-loader", { loader: "css-loader", options: { url: false, modules: true } }]
-      }]
+      }
+    ]
   },
   devtool: 'source-map',
   serve: {
@@ -30,5 +26,5 @@ module.exports = {
     port: 8080,
     content: path.resolve(__dirname, 'public'),
   },
-  plugins: [new HtmlWebpackPlugin({ title: 'react fizzbuzz', template: "src/index.html" })]
+  plugins: [new HtmlWebpackPlugin({ template: "src/index.html" })]
 }
