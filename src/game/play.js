@@ -67,7 +67,8 @@ export default class Play extends React.Component {
   }
 
   render() {
-    const style = { fontSize: (300 + (10 - this.state.tick) * 5) + '%' }
+    const fontSize = (300 + (10 - this.state.tick) * 10) + '%'
+    const style = { fontSize }
     return <>
       <p><span style={style}>{this.state.count}</span></p>
       <div>
