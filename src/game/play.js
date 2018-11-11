@@ -40,6 +40,14 @@ export default class Play extends React.Component {
     this.props.onEnd({ score: this.state.count - 1, message })
   }
 
+  fizz = () => {
+    this.setState({ fizz: true })
+  }
+
+  buzz = () => {
+    this.setState({ buzz: true })
+  }
+
   keydown = (e) => {
     if (e.keyCode == 27) {
       this.end("cancel");
@@ -67,13 +75,17 @@ export default class Play extends React.Component {
   }
 
   render() {
-    const fontSize = (300 + (10 - this.state.tick) * 10) + '%'
-    const style = { fontSize }
+    const fontSize = (300 + (10 - this.state.tick) * 100) + '%'
+    const buttonStyle = { fontSize: "4em", lineHeight: "50vh", height: "50vh", width: "48vw", textAlign: 'center', border: '1px solid #000' }
     return <>
-      <p><span style={style}>{this.state.count}</span></p>
-      <div>
-        {this.state.fizz && <span>Fizz</span>}
-        {this.state.buzz && <span>Buzz</span>}
+      <div style={{ alignItems: 'center', padding: "0", margin: "0", display: 'flex', justifyContent: 'space-around', height: "50vh", fontSize }}>
+        <div>
+          {this.state.count}
+        </div>
+      </div>
+      <div style={{ display: "flex", padding: "0", margin: "0", justifyContent: 'space-around' }}>
+        <div style={{ ...buttonStyle, color: this.state.fizz ? '#F00' : '#000' }} onClick={this.fizz}> Fizz</div>
+        <div style={{ ...buttonStyle, color: this.state.buzz ? '#F00' : '#000' }} onClick={this.buzz}>Buzz</div>
       </div>
     </>
   }
