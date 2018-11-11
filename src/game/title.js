@@ -1,5 +1,12 @@
 import React from 'react'
 import { GoMarkGithub } from "react-icons/go";
+
+const levels = [
+  { label: 'EASY', interval: 1000 },
+  { label: 'HARD', interval: 700 },
+  { label: 'VERY HARD', interval: 500 },
+  { label: 'HELL', interval: 300 }
+]
 export default class Title extends React.Component {
   render() {
     const result = this.props.result;
@@ -8,25 +15,20 @@ export default class Title extends React.Component {
         <a href="https://github.com/ma2saka/react-fizzbuzz"><GoMarkGithub /></a>
       </header>
       <hr />
-      <p>previous score: {result ? (<>{result.score} ({result.message})</>) : "-"}</p>
+      {result &&
+        <p>previous score:{result.score} ({result.message})</p>
+      }
       <h1>React FizzBuzz</h1>
       <p>Use "f" and "b" key.</p>
       <ul style={{ padding: "0", margin: "0" }}>
-        <li style={{ margin: "5px", listStyleType: "none" }}>
-          <button onClick={() => this.props.onStart({ interval: 1000 })} style={{ width: "35vw", height: "8vh" }}>
-            EASY
-          </button>
-        </li>
-        <li style={{ margin: "5px", listStyleType: "none" }}>
-          <button onClick={() => this.props.onStart({ interval: 700 })} style={{ width: "35vw", height: "8vh" }}>
-            HARD
-          </button>
-        </li>
-        <li style={{ margin: "5px", listStyleType: "none" }}>
-          <button onClick={() => this.props.onStart({ interval: 500 })} style={{ width: "35vw", height: "8vh" }}>
-            HELL
-          </button>
-        </li>
+        {levels.map(c => (
+          <li key={c.label} style={{ listStyleType: "none" }}>
+            <button onClick={() => this.props.onStart({ interval: c.interval })} style={{ margin: "5px", width: "35vw", height: "8vh" }}>
+              {c.label}
+            </button>
+          </li>
+        )
+        )}
       </ul>
     </div>)
   }
