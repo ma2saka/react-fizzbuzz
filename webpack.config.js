@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './docs/'),
-    publicPath: '/',
+    publicPath: './',
     filename: '[name]-[hash].js'
   },
   module: {
@@ -30,5 +30,5 @@ module.exports = {
     port: 8080,
     content: path.resolve(__dirname, 'public'),
   },
-  plugins: [new HtmlWebpackPlugin({ template: "src/index.html" })]
+  plugins: [new HtmlWebpackPlugin({ title: 'react fizzbuzz', template: "src/index.html" })]
 }
